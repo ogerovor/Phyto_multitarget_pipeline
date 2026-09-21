@@ -18,7 +18,8 @@ for index, row in compounds.iterrows():
             'LogP': Descriptors.MolLogP(mol),
             'TPSA': Descriptors.TPSA(mol),
             'HBD': Descriptors.NumHDonors(mol),
-            'HBA': Descriptors.NumHAcceptors(mol)
+            'HBA': Descriptors.NumHAcceptors(mol),
+            'RotB': Descriptors.NumRotatableBonds(mol)
         })
 descriptors_df = pd.DataFrame(descriptor_list)
 descriptors_df.to_csv('data/descriptors.csv', index= False)
